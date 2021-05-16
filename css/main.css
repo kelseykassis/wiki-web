@@ -1,0 +1,83 @@
+/*
+Sources:
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Realizing_common_layouts_using_CSS_Grid_Layout
+*/
+
+html {
+  font-size: 1rem;
+  font-family: Consolas, monaco, monospace;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1 {
+  font-family: "Yatra One"
+}
+
+img {
+  width: auto;
+  max-width: 2em;
+  height: auto;
+}
+
+.main-head {
+  grid-area: header;
+}
+.content {
+  grid-area: content;
+}
+.main-nav {
+  grid-area: nav;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "nav"
+    "content";
+}
+
+@media (min-width: 31.25em) {
+  .wrapper {
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+      "header  header"
+      "nav     nav"
+      "content content";
+  }
+  nav ul {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    gap: 1rem;
+  }
+}
+
+
+@media (min-width: 43.75em) {
+     body {
+       display: grid;
+       grid-template-columns: 1fr 3fr;
+       gap: 1rem;
+     }
+   nav ul {
+     display: grid;
+     grid-auto-flow: column;
+     justify-content: start;
+     gap: 1rem;
+
+   }
+}
+
+#float-1 {
+    float: right;
+    width: 33.333333333333333%;
+    margin-top: 0;
+    margin-left: 1rem;
+    margin-bottom: 0;
+  }
+
+}
